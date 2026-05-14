@@ -63,6 +63,9 @@
         border-radius: 4px;
         padding: 3px 6px;
       }
+      /* Match the known-good shell: stretch the canvas element itself. A wrapper +
+       * CSS transform scale() broke SDL Emscripten mouse mapping for some setups
+       * (local http.server + Chrome), while plain width/height on #canvas worked. */
       canvas {
         width: 100vw;
         height: calc(100vh - 42px);
