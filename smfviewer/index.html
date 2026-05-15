@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMF Pro Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load MidiParser via CDN, ensuring it's globally available -->
+    <script type="module">
+        import { MidiParser } from 'https://cdn.jsdelivr.net/npm/midi-parser-js@4.0.4/src/midi-parser.js';
+        window.MidiParser = MidiParser;
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="text-center">
+            <h1 class="gradient-text">SMF Viewer <span style="font-size: 1.5rem; vertical-align: middle; opacity: 0.7;">Ver. 1.0</span></h1>
+            <div id="drop-zone" class="drop-zone">
+                <p>Drop your <b>MIDI File (.mid)</b> to Edit & Save</p>
+                <input type="file" id="file-input" accept=".mid,.midi" hidden>
+            </div>
+            <button id="save-btn" class="save-btn hidden">💾 Save Edited MIDI File</button>
+        </header>
 
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <h3 id="loader-status">Analyzing MIDI...</h3>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <main id="main-content" class="hidden">
+            <section class="section-container">
+                <h2 class="title">File Information</h2>
+                <div id="header-stats" class="stats-grid"></div>
+            </section>
+            
+            <section class="section-container" style="margin-top:3rem;">
+                <h2 class="title">Tracks & Event Data</h2>
+                <div id="tracks-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
