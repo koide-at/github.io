@@ -1,0 +1,83 @@
+:root {
+  --bg: #f6f2ea;
+  --text: #3a342e;
+  --heading: #2a241f;
+  --muted: #5c5349;
+  --link: #6b4f3a;
+  --rule: #d4c8b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1.25rem 3rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+main {
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+header {
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h1 {
+  margin: 0 0 0.6rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: var(--heading);
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+}
+
+article {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+article:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: var(--heading);
+  border-bottom: 1px dotted var(--rule);
+}
+
+p { margin: 0 0 0.75rem; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover { color: var(--text); }
+
+.note {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
